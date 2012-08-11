@@ -77,10 +77,12 @@ end
 </script>
 
 <script>
-$(document).ready(function(){
-    $hanoi = $("#hanoi-rawcode").html()
-    $("#hanoi").html($hanoi)
-    hljs.highlightBlock($('#hanoi pre')[0])
+$(window).keypress(function(event){
+    if ( event.which == 13 ) {
+        $hanoi = $("#hanoi-rawcode").html()
+        $("#hanoi").html($hanoi)
+        hljs.highlightBlock($('#hanoi pre')[0])
+    }
 })
 </script>
 
