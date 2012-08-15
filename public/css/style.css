@@ -41,7 +41,14 @@ a {
 }
 
 
+
 div[role="main"] {height:100%;}
+
+#history {
+    font-size: 16px;
+    font-family: monospace;
+    padding: 10px;
+}
 
 /* Gridster styles */
 .demo {
