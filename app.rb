@@ -1,6 +1,6 @@
 require "sinatra"
 require "sinatra/reloader" if development?
-require "pry-remote"
+require "pry-bot"
 require 'drb'
 require 'pry'
 
