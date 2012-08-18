@@ -1,8 +1,3 @@
-//= require libs/jquery
-//= require libs/underscore
-//= require libs/backbone
-//= require libs/jquery.gridster
-//= require libs/highlight/highlight.pack
 
 
 //= require_tree ./templates
