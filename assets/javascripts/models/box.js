@@ -4,5 +4,6 @@ var BoxModel = Backbone.Model.extend({
         ycoord: 1,
         xsize: 3,
         ysize: 3,
-    }
+    },
+
 });

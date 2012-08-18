@@ -16,9 +16,14 @@ var BoxView = Backbone.View.extend({
       attr('data-col', this.model.get('col')).
       attr('data-sizex', this.model.get('sizex')).
       attr('data-sizey', this.model.get('sizey'));
-    
 
     return this;
-  }
+  },
 
+  render_widget: function(){
+    if (this.model.get('widget') === 'code') {
+      var code_widget = this.widget = new CodeWidgetView();
+      this.$el.html(code_widget.render().$el);
+    }
+  }
 });

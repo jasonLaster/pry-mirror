@@ -1,6 +1,6 @@
 var boxes = [
-  {type:'code-stack', col:1, row:1, sizex:5, sizey:4},
-  {type:'history', col:8, row:1, sizex:5, sizey:4}
+  {widget:'code', col:1, row:1, sizex:5, sizey:4},
+  {widget:'code', col:8, row:1, sizex:5, sizey:4}
 ];
 
 
@@ -22,15 +22,18 @@ var SpaceView = Backbone.View.extend({
       // fill space container with boxes
       var $space_container = this.$el.find('ul')
       _.each(this.collection.models, function (box) {
-        that.render_box(box, $space_container)
+        var box_view = new BoxView({model: box});
+        $space_container.append(box_view.render().$el);
+        box_view.render_widget();
       }, this);
 
       return this;
     },
 
-    render_box: function(box, space){
-      var box_view = new BoxView({model: box});
-      space.append(box_view.render().$el);
+    start_widgets: function() {
+      _.each(this.collection, function(box){
+        box.widget.launch_editor()
+      })
     }
 
 });
