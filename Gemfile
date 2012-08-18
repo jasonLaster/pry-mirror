@@ -6,4 +6,6 @@ gem "catapult", :path => '../_os/catapult'
 gem "eco"
 
 gem "pry"
-gem "pry-bot"
+gem "pry-bot", :path => '../pry-bot'
+gem "pry-stack_explorer"
+gem "pry-debugger"
