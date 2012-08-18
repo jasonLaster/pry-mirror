@@ -1,0 +1,6 @@
+<h1>space</h1>
+<ul>
+ <% for box in @boxes: %>
+    <li> <%= "foo bar" %> </li>
+  <% end %>
+</ul>
