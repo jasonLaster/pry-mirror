@@ -8,4 +8,10 @@ pre.ruby {font-size:16px;}
     padding: 10px;
 }
 
-#foo {}
+#editor {
+      position: absolute;
+      width: 500px;
+      height: 400px;
+  }
+
+

@@ -18,8 +18,21 @@ $(function(){
       min_cols: 6,
       min_rows: 20
   }).data('gridster');
-  
+
   // $hanoi = $("#hanoi-rawcode").html()
   // $("#hanoi").html($hanoi)
   // hljs.highlightBlock($('#hanoi pre')[0])
+
+
+$li = $('li').first().html('<div id="editor">')
+var editor = ace.edit("editor");
+editor.setTheme("ace/theme/solarized_dark");
+editor.getSession().setMode(new (require("ace/mode/ruby").Mode));
+document.getElementById('editor').style.fontSize='12px';
+
+gridster = $(".gridster ul").data('gridster')
+draggable = gridster.draggable().drag_api
+draggable.disable()
+
+
 });
