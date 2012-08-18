@@ -1,6 +1,6 @@
 var boxes = [
   {type:'code-stack', col:1, row:1, sizex:2, sizey:2},
-  {type:'history', col:4, row:1, sizex:1, sizey:3}
+  {type:'history', col:4, row:1, sizex:2, sizey:3}
 ];
 
 
@@ -14,17 +14,17 @@ var SpaceView = Backbone.View.extend({
       this.collection = new SpaceCollection(boxes);
       this.render();
     },
- 
+
     render: function () {
       var that = this;
       this.$el.html($(this.template({})))
-      
+
       // fill space container with boxes
       var $space_container = this.$el.find('ul')
       _.each(this.collection.models, function (box) {
         that.render_box(box, $space_container)
       }, this);
-      
+
       return this;
     },
 
