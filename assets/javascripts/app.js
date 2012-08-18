@@ -12,9 +12,11 @@ var gridster;
 
 $(function(){
 
+  var width = $(window).width();
+
   gridster = $(".gridster ul").gridster({
       widget_margins: [10, 10],
-      widget_base_dimensions: [140, 140],
+      widget_base_dimensions: [width/20, width/20],
       min_cols: 6,
       min_rows: 20
   }).data('gridster');
@@ -37,12 +39,12 @@ editor.setHighlightActiveLine(false)
 editor.setTheme("ace/theme/solarized_dark");
 var style = document.getElementById('editor').style
 style.fontSize='16px';
-style.fontWeight = 800
+style.fontWeight = 800;
 
 
 gridster = $(".gridster ul").data('gridster')
 draggable = gridster.draggable().drag_api
-draggable.disable()
+// draggable.disable()
 
 
 });

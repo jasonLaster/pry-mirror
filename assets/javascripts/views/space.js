@@ -1,6 +1,6 @@
 var boxes = [
-  {type:'code-stack', col:1, row:1, sizex:2, sizey:2},
-  {type:'history', col:4, row:1, sizex:2, sizey:3}
+  {type:'code-stack', col:1, row:1, sizex:5, sizey:4},
+  {type:'history', col:8, row:1, sizex:5, sizey:4}
 ];
 
 
