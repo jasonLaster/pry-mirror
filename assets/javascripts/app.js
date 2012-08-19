@@ -27,6 +27,4 @@ $(function(){
 gridster = $(".gridster ul").data('gridster')
 draggable = gridster.draggable().drag_api
 draggable.disable()
-
-
 });

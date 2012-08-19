@@ -8,16 +8,6 @@ App.CodeWidgetView = Backbone.View.extend({
     return this;
   },
 
-  render: function(){
-    this.$el.html(this.template({model:this.model}))
-    return this;
-  },
-
-  events: {
-    "click": "launch_editor",
-  },
-
-
   launch_editor: function(){
     var editor = ace.edit(this.el.id);
     editor.insert(this.model.get('code'));

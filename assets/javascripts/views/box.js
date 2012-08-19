@@ -22,8 +22,9 @@ App.BoxView = Backbone.View.extend({
 
   render_widget: function(){
     if (this.model.get('widget') === 'code') {
-      this.$el.html(code_widget.render().$el);
       this.widget = new App.CodeWidgetView();
+      this.$el.html(this.widget.$el);
+      this.widget.launch_editor();
     }
   }
 });
