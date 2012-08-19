@@ -1,6 +1,6 @@
 var boxes = [
-  {widget:'code', col:1, row:1, sizex:5, sizey:4},
-  {widget:'code', col:8, row:1, sizex:5, sizey:4}
+  {widget:'code-stack', col:1, row:1, sizex:5, sizey:4, code: App.dummy_code_stack},
+  {widget:'code', col:8, row:1, sizex:5, sizey:4, code: App.dummy_code}
 ];
 
 
@@ -29,11 +29,5 @@ App.SpaceView = Backbone.View.extend({
 
       return this;
     },
-
-    start_widgets: function() {
-      _.each(this.collection, function(box){
-        box.widget.launch_editor()
-      })
-    }
 
 });

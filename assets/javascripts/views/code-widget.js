@@ -3,7 +3,6 @@ App.CodeWidgetView = Backbone.View.extend({
   template: JST["templates/code-widget"],
 
   initialize: function(){
-    this.model = new App.CodeWidgetModel();
     this.el.id = this.model.cid;
     return this;
   },
