@@ -13,7 +13,7 @@ App.CodeStackWidgetView = Backbone.View.extend({
     _.each(this.collection.models, function(code_widget){
       code_widget_view = new App.CodeWidgetView({model: code_widget})
       that.$el.append(code_widget_view.$el)
-      code_widget_view.launch_editor()
+      App.launch_editor(code_widget_view)
     })
   }
 
