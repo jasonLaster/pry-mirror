@@ -1,9 +1,9 @@
-var CodeWidgetView = Backbone.View.extend({
+App.CodeWidgetView = Backbone.View.extend({
   className: 'code-widget',
   template: JST["templates/code-widget"],
 
   initialize: function(){
-    this.model = new CodeWidgetModel();
+    this.model = new App.CodeWidgetModel();
     this.el.id = this.model.cid;
     return this;
   },

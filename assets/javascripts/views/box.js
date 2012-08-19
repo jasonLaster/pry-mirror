@@ -1,4 +1,4 @@
-var BoxView = Backbone.View.extend({
+App.BoxView = Backbone.View.extend({
   tagName: 'li',
   className: 'box',
   template: JST["templates/box"],
@@ -22,8 +22,8 @@ var BoxView = Backbone.View.extend({
 
   render_widget: function(){
     if (this.model.get('widget') === 'code') {
-      var code_widget = this.widget = new CodeWidgetView();
       this.$el.html(code_widget.render().$el);
+      this.widget = new App.CodeWidgetView();
     }
   }
 });

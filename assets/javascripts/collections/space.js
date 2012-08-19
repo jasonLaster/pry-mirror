@@ -1,3 +1,3 @@
-var SpaceCollection = Backbone.Collection.extend({
-    model: BoxModel
+App.SpaceCollection = Backbone.Collection.extend({
+    model: App.BoxModel
 });

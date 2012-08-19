@@ -4,14 +4,14 @@ var boxes = [
 ];
 
 
-var SpaceView = Backbone.View.extend({
+App.SpaceView = Backbone.View.extend({
     tagName: 'ul',
     el: $("#space"),
     template: JST["templates/space"],
 
 
     initialize: function () {
-      this.collection = new SpaceCollection(boxes);
+      this.collection = new App.SpaceCollection(boxes);
       this.render();
     },
 
@@ -22,7 +22,7 @@ var SpaceView = Backbone.View.extend({
       // fill space container with boxes
       var $space_container = this.$el.find('ul')
       _.each(this.collection.models, function (box) {
-        var box_view = new BoxView({model: box});
+        var box_view = new App.BoxView({model: box});
         $space_container.append(box_view.render().$el);
         box_view.render_widget();
       }, this);
