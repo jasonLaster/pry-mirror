@@ -39,6 +39,10 @@ App.BoxView = Backbone.View.extend({
       this.widget.render_history();
     }
 
-
+    else if(this.model.get('widget') === 'input') {
+      this.widget = new App.InputWidgetView();
+      this.$el.html(this.widget.$el);
+      App.launch_editor(this.widget);
+    }
   }
 });

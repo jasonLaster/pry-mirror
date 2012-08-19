@@ -16,7 +16,7 @@ App.launch_editor = function(el){
 
     // Theme
     editor.setTheme("ace/theme/solarized_dark");
-    var style = code.el.style
+    var style = el.el.style
     style.fontSize='16px';
     style.fontWeight = 800;
 }

@@ -7,8 +7,5 @@ App.CodeWidgetView = Backbone.View.extend({
     this.el.id = this.model.cid;
     return this;
   },
-
-
-
 });
 

@@ -15,3 +15,5 @@ App.dummy_history = [
   {input:'ls', output:'self.methods: __pry__\ninstance variables: @backtrace  @binding_stack  @command_state  @commands  @custom_completions  @exception_handler\nlocals: _  _dir_  _ex_  _file_  _in_  _out_  _pry_'},
 ]
 
+
+
