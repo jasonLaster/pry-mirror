@@ -4,7 +4,7 @@ App.CodeStackWidgetView = Backbone.View.extend({
 
   initialize: function(){
     this.model = new App.CodeStackWidgetModel();
-    this.collection = new App.CodeStackWidgetCollection(App.dummy_code_stack)
+    this.collection = new App.CodeStackCollection(App.dummy_code_stack)
     return this;
   },
 

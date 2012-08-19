@@ -35,5 +35,39 @@ li.box {
       font-weight:800;
       color:@base2;
     }
+
+    .code_stack-widget {
+      position: relative;
+      background-color:@base02;
+      height:100%;
+      overflow-y:scroll;
+      font-family:16px;
+      font-weight:800;
+      color:@base2;
+
+      .code-widget {
+        margin-top:10px;
+        height:150px;
+      }
+    }
+
+
+    .history-widget {
+      color:@base2;
+      background-color: @base02;
+      .action-widget {
+        margin-top:10px;
+        .input {
+          color:@blue;
+          margin-bottom:.5em;
+        }
+        .output {
+          color:@green;
+          padding-bottom:.5em;
+        }
+
+        background-color: @base03;
+      }
+    }
 }
 

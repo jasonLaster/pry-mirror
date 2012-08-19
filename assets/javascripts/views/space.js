@@ -1,6 +1,7 @@
 var boxes = [
-  {widget:'code-stack', col:1, row:1, sizex:5, sizey:4, code: App.dummy_code_stack},
-  {widget:'code', col:8, row:1, sizex:5, sizey:4, code: App.dummy_code}
+  {widget:'code-stack', col:1, row:1, sizex:5, sizey:7},
+  {widget:'history', col:8, row:1, sizex:5, sizey:4},
+  {widget:'code', col:8, row:6, sizex:5, sizey:2}
 ];
 
 
