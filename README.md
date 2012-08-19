@@ -1,9 +1,13 @@
-pry-mirror
-==========
+What is it
+-----
 
-A (nascent (but soon-to-be-awesome)) web-based interface to Pry.
+A Pry IDE designed for Webkit.
 
-Currently just has I/O with Pry, but the Sky's the limit.
+
+What will it look like
+-----
+
+![Pry-Mirror](http://i.imgur.com/nnDJX.png)
 
 Usage
 -----
@@ -15,13 +19,10 @@ Then you should be able to hit localhost:4567
 Imagine
 -------
 
-- Being able to pop in and out of a web UI from a Pry session
-- Displaying all kinds of bits of info
-- Doing so with modularity (such as peeling off a window alongside your main
-  Pry session that shows you the reloaded & rendered results after each method
-  redefinition)
-- Interacting with the client-side state from your REPL session.
-- Doing totally different types of things.
+- getting instant feedback as you develop
+
+- seeing all of the components of the system in one window
+
 
 Security
 --------
