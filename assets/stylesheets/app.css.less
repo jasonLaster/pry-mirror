@@ -19,67 +19,85 @@ body {
   font-family: "M+ 1m", monospace;
   font-size: 16px;
   background-color:@base03;
+  padding:10px;
 }
 
 caret { color: @red; }
 selection { background-color: @base02; }
 
 
-li.box {
-    .code-widget {
-      position:relative;
-      width:100%;
-      height:100%;
-      background-color:@base03;
-      font-family:16px;
-      font-weight:800;
-      color:@base2;
-    }
+.code() {
+  position: relative;
+  background-color:@base02;
+  width:100%;
+  height:100%;
+  overflow-y:scroll;
+  font-family:16px;
+  font-weight:800;
+  color:@base2;
+}
 
-    .code_stack-widget {
-      position: relative;
-      background-color:@base02;
+li.box {
+
+  .container {
+    position:relative;
+    height:100%;
+
+
+    .widget {
       height:100%;
-      overflow-y:scroll;
-      font-family:16px;
-      font-weight:800;
-      color:@base2;
 
       .code-widget {
-        margin-top:10px;
-        height:150px;
+        .code;
       }
+
+      .code_stack-widget {
+        .code;
+        .code-widget {
+          margin-top:10px;
+          height:150px;
+        }
+      }
+
+      .input-widget {
+        .code;
+      }
+
+
+      .history-widget {
+        color:@base2;
+        background-color: @base02;
+        height:100%;
+        overflow-y:scroll;
+
+        .action-widget {
+          margin-top:10px;
+          .input {
+            color:@blue;
+            margin-bottom:.5em;
+          }
+          .output {
+            color:@green;
+            padding-bottom:.5em;
+          }
+
+          background-color: @base03;
+        }
+      }
+
     }
 
-    .input-widget {
-      position:relative;
-      height:100%;
-      background-color:@base03;
-      font-family:16px;
-      font-weight:800;
-      color:@base2;
-    }
-
-
-    .history-widget {
-      color:@base2;
+    .label {
+      position: absolute;
+      right: 20px;
+      top: -1.5em;
+      color:@magenta;
       background-color: @base02;
-      height:100%;
-      overflow-y:scroll;
-
-      .action-widget {
-        margin-top:10px;
-        .input {
-          color:@blue;
-          margin-bottom:.5em;
-        }
-        .output {
-          color:@green;
-          padding-bottom:.5em;
-        }
-
-        background-color: @base03;
-      }
+      font-weight:800;
+      padding: .125em .25em;
     }
+  }
+
+
 }
 

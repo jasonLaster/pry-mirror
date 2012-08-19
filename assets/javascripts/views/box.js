@@ -10,7 +10,7 @@ App.BoxView = Backbone.View.extend({
 
   render: function(){
 
-    this.$el.html(this.template())
+    this.$el.html(this.template({model: this.model}))
     this.$el.
       attr('data-row', this.model.get('row')).
       attr('data-col', this.model.get('col')).
@@ -23,25 +23,25 @@ App.BoxView = Backbone.View.extend({
   render_widget: function(){
     if (this.model.get('widget') === 'code') {
       this.widget = new App.CodeWidgetView();
-      this.$el.html(this.widget.$el);
+      this.$el.find('.widget').html(this.widget.$el);
       App.launch_editor(this.widget);
     }
 
     else if(this.model.get('widget') === 'code-stack') {
       this.widget = new App.CodeStackWidgetView();
-      this.$el.html(this.widget.$el);
+      this.$el.find('.widget').html(this.widget.$el);
       this.widget.render_code_stack();
     }
 
     else if(this.model.get('widget') === 'history') {
       this.widget = new App.HistoryWidgetView();
-      this.$el.html(this.widget.$el);
+      this.$el.find('.widget').html(this.widget.$el);
       this.widget.render_history();
     }
 
     else if(this.model.get('widget') === 'input') {
       this.widget = new App.InputWidgetView();
-      this.$el.html(this.widget.$el);
+      this.$el.find('.widget').html(this.widget.$el);
       App.launch_editor(this.widget);
     }
   }
