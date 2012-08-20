@@ -45,15 +45,15 @@ $('.input-widget textarea').keypress(function(e){
     })
 
     // add action to history
-    var action = new App.Models.ActionWidget({input: input, output: ''})
+    var action = new App.Models.ActionWidget({input: input})
     $('.history-widget').trigger('add_action', action)
 
     // post the input and handle response
     $.post(
       'input',
-      {input: input, action_id: action.id},
-      function(data){
-        console.log(data)
+      {input: input},
+      function(output){
+        a = action.set('output', output)
       }
     )
   }
