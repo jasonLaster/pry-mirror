@@ -34,21 +34,24 @@ draggable.disable()
 $('.input-widget textarea').keypress(function(e){
   if(e.which === 13) {
     var $el = $(this);
+
+    // get input
     var editor = ace.edit($el.closest('.ace_editor').attr('id'));
     var input = editor.getValue();
 
+    // get history
     var history = _.find(space.collection.models, function(model) {
       return model.get('widget')==='history'
     })
 
+    // add action to history
     var action = new App.Models.ActionWidget({input: input, output: ''})
-    history.collection.add(action)
+    $('.history-widget').trigger('add_action', action)
 
+    // post the input and handle response
     $.post(
       'input',
-
       {input: input, action_id: action.id},
-
       function(data){
         console.log(data)
       }

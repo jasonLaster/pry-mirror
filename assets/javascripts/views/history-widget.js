@@ -14,6 +14,15 @@ App.Views.HistoryWidget = Backbone.View.extend({
     return this;
   },
 
+  events : {
+    'add_action': 'add_action'
+  },
+
+
+  add_action: function(e, action) {
+    this.render_action(action);
+  },
+
   render_action: function(action){
     action_view = new App.Views.ActionWidget({model: action})
     this.$el.append(action_view.render().$el)
