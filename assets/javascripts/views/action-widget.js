@@ -10,8 +10,8 @@ App.Views.ActionWidget = Backbone.View.extend({
 
   render: function(){
     this.$el.html(this.template())
-    this.$el.find('.input').html(this.model.get('input'));
-    this.$el.find('.output').html(this.model.get('output'));
+    this.$el.find('.input pre').html(this.model.get('input'));
+    this.$el.find('.output pre').html(this.model.get('output'));
     return this;
   },
 
