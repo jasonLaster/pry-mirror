@@ -1,4 +1,4 @@
-App.BoxModel = Backbone.Model.extend({
+App.Models.Box = Backbone.Model.extend({
     defaults: {
         xcoord: 1,
         ycoord: 1,

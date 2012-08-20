@@ -1,2 +1,2 @@
-App.ActionWidgetModel = Backbone.Model.extend({
+App.Models.ActionWidget = Backbone.Model.extend({
 });

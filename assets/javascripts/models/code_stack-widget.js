@@ -1,2 +1,2 @@
-App.CodeStackWidgetModel = Backbone.Model.extend({
+App.Models.CodeStackWidget = Backbone.Model.extend({
 });

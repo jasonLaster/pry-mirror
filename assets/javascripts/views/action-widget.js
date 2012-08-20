@@ -1,4 +1,4 @@
-App.ActionWidgetView = Backbone.View.extend({
+App.Views.ActionWidget = Backbone.View.extend({
   className: 'action-widget',
   template: JST["templates/action-widget"],
 

@@ -1,2 +1,2 @@
-App.CodeWidgetModel = Backbone.Model.extend({
+App.Models.CodeWidget = Backbone.Model.extend({
 });

@@ -1,2 +1,2 @@
-App.InputWidgetModel = Backbone.Model.extend({
+App.Models.InputWidget = Backbone.Model.extend({
 });

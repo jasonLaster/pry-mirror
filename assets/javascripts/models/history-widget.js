@@ -1,2 +1,2 @@
-App.HistoryWidgetModel = Backbone.Model.extend({
+App.Models.HistoryWidget = Backbone.Model.extend({
 });

@@ -9,7 +9,7 @@
 
 
 
-var space = new App.SpaceView();
+var space = new App.Views.Space();
 
 var gridster;
 
@@ -40,7 +40,7 @@ $('.input-widget textarea').keypress(function(e){
       return model.get('widget')==='history'
     })
 
-    var action = new App.ActionWidgetModel({input: input, output: ''})
+    var action = new App.Models.ActionWidget({input: input, output: ''})
     history.collection.add(action)
 
     $.post(

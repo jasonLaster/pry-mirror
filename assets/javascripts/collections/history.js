@@ -1,3 +1,3 @@
-App.HistoryCollection = Backbone.Collection.extend({
-    model: App.ActionWidgetModel
+App.Collections.History = Backbone.Collection.extend({
+    model: App.Models.ActionWidget
 });

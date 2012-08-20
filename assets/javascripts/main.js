@@ -1,4 +1,9 @@
-window.App = {}
+window.App = {
+  Collections: {},
+  Models: {},
+  Routers: {},
+  Views: {},
+}
 
 App.dummy_code_stack = [
   {code: 'def foo(bar)\n  puts "foo bar"\nend\n\n'},
