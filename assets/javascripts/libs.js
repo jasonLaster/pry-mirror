@@ -2,6 +2,7 @@
 //= require libs/underscore
 //= require libs/backbone
 //= require libs/jquery/jquery.gridster
+//= require libs/jquery/jquery.scrollTo
 //= require libs/highlight/highlight.pack
 //= require libs/ace/ace
 //= require libs/ace/mode-ruby

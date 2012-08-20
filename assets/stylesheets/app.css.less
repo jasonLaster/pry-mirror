@@ -15,16 +15,11 @@
 @cyan:      #2aa198;
 @green:     #859900;
 
-body {
-  font-family: "M+ 1m", monospace;
-  font-size: 16px;
-  background-color:@base03;
-  padding:10px;
+
+.hacker-fonts() {
+  font-family: Monaco, Menlo, 'Ubuntu Mono', 'Droid Sans Mono', Consolas, monospace;
+  font-weight:800;
 }
-
-caret { color: @red; }
-selection { background-color: @base02; }
-
 
 .code() {
   position: relative;
@@ -36,6 +31,20 @@ selection { background-color: @base02; }
   font-weight:800;
   color:@base2;
 }
+
+body {
+  font-family: "M+ 1m", monospace;
+  font-size: 16px;
+  background-color:@base03;
+  padding:10px;
+
+  .hacker-fonts;
+
+}
+
+caret { color: @red; }
+selection { background-color: @base02; }
+
 
 li.box {
 
@@ -69,16 +78,19 @@ li.box {
         background-color: @base02;
         height:100%;
         overflow-y:scroll;
+        padding-bottom:40px;
 
         .action-widget {
           margin-top:10px;
           .input {
             color:@blue;
             margin-bottom:.5em;
+            .hacker-fonts;
           }
           .output {
             color:@green;
             padding-bottom:.5em;
+            .hacker-fonts;
           }
 
           background-color: @base03;
