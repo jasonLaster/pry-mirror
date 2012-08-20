@@ -1,9 +1,11 @@
 
 App.launch_editor = function(el){
     var editor = ace.edit(el.el.id);
-    if (el.model.has('code')) {
-        editor.insert(el.model.get('code'));
-    }
+
+    // add text
+    var text = el.model.has('code') ? el.model.get('code') : ""
+    editor.insert(text);
+
 
     // Session settings
     var session = editor.getSession()

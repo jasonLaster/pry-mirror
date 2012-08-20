@@ -28,3 +28,29 @@ gridster = $(".gridster ul").data('gridster')
 draggable = gridster.draggable().drag_api
 draggable.disable()
 });
+
+
+$('.input-widget textarea').keypress(function(e){
+  if(e.which === 13) {
+    var $el = $(this);
+    var editor = ace.edit($el.closest('.ace_editor').attr('id'));
+    var input = editor.getValue();
+
+    var history = _.find(space.collection.models, function(model) {
+      return model.get('widget')==='history'
+    })
+
+    var action = new App.ActionWidgetModel({input: input, output: ''})
+    history.collection.add(action)
+
+    $.post(
+      'input',
+
+      {input: input, action_id: action.id},
+
+      function(data){
+        console.log(data)
+      }
+    )
+  }
+});

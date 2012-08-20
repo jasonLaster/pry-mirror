@@ -36,7 +36,6 @@ App.BoxView = Backbone.View.extend({
     else if(this.model.get('widget') === 'history') {
       this.widget = new App.HistoryWidgetView();
       this.$el.find('.widget').html(this.widget.$el);
-      this.widget.render_history();
     }
 
     else if(this.model.get('widget') === 'input') {
