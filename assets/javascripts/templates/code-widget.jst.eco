@@ -1,1 +1,4 @@
-
+<div class="info">
+</div>
+<div id="<%= @code_id %>" class="code_el">
+</div>

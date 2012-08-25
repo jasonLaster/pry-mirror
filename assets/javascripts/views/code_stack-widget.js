@@ -20,8 +20,9 @@ App.Views.CodeStackWidget = Backbone.View.extend({
 
   render_code_widget: function(code){
     var code_widget_view = new App.Views.CodeWidgetView({model: code})
-    this.$el.append(code_widget_view.$el)
-    App.launch_editor(code_widget_view)
+    this.$el.append(code_widget_view.render().$el)
+    App.Ace.launch_editor(code_widget_view.code_id())
+    code_widget_view.update_code()
   }
 
 });

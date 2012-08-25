@@ -23,14 +23,14 @@ App.Views.Box = Backbone.View.extend({
   render_widget: function(){
     if (this.model.get('widget') === 'code') {
       this.widget = new App.Views.CodeWidgetView();
-      this.$el.find('.widget').html(this.widget.$el);
-      App.launch_editor(this.widget);
+      this.$el.find('.widget').html(this.widget.render().$el);
+      App.launch_editor(this.widget.code_id());
     }
 
     else if(this.model.get('widget') === 'code-stack') {
       this.widget = new App.Views.CodeStackWidget();
       this.$el.find('.widget').html(this.widget.$el);
-      this.widget.collection.add(App.dummy_code_stack)
+      this.widget.collection.add(App.dummy_code_stack, {silent: false})
     }
 
     else if(this.model.get('widget') === 'history') {
@@ -43,7 +43,7 @@ App.Views.Box = Backbone.View.extend({
     else if(this.model.get('widget') === 'input') {
       this.widget = new App.Views.InputWidget();
       this.$el.find('.widget').html(this.widget.$el);
-      App.launch_editor(this.widget);
+      App.Ace.launch_editor(this.widget.el.id);
     }
   }
 });

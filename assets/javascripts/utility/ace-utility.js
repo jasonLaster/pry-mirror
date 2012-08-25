@@ -1,11 +1,15 @@
+App.Ace = {}
 
-App.launch_editor = function(code){
-    var editor = ace.edit(code.el.id);
+App.Ace.get_editor = function(id){
+    return ace.edit(id)
+}
 
-    // add text
-    var text = code.model.has('code') ? code.model.get('code') : ""
-    editor.insert(text);
+App.Ace.set_code = function(editor, code) {
+    editor.setValue(code)
+    return editor
+}
 
+App.Ace.set_settings = function(editor) {
     // Session settings
     var session = editor.getSession()
     session.setMode(new (require("ace/mode/ruby").Mode));
@@ -14,15 +18,20 @@ App.launch_editor = function(code){
     // Editor Settings
     editor.renderer.setShowGutter(false)
     editor.setHighlightActiveLine(false)
-
-    // Theme
     editor.setTheme("ace/theme/solarized_dark");
-    var style = code.el.style
-    style.fontSize='16px';
-    style.fontWeight = 800;
+    return editor;
 }
 
-App.update_text = function(el, code) {
-    var editor = ace.edit(el.id);
-    editor.setValue(code)
+App.Ace.set_styles = function(el){
+    var style = el.style
+    style.fontSize='16px';
+    style.fontWeight = 800;
+    return style;
+}
+
+App.Ace.launch_editor = function(id) {
+    var editor = App.Ace.get_editor(id)
+    App.Ace.set_settings(editor)
+    var el = $('#'+id)[0];
+    App.Ace.set_styles(el)
 }
