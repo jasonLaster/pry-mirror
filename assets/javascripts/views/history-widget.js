@@ -9,8 +9,6 @@ App.Views.HistoryWidget = Backbone.View.extend({
     // setup collection
     this.collection = new App.Collections.History();
     this.collection.on("add", this.render_action, this)
-    this.collection.add(App.dummy_history)
-
     return this;
   },
 

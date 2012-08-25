@@ -40,21 +40,28 @@ $('.input-widget textarea').keypress(function(e){
     var editor = ace.edit($el.closest('.ace_editor').attr('id'));
     var input = editor.getValue();
 
-    // get history
-    var history = _.find(space.collection.models, function(model) {
-      return model.get('widget')==='history'
-    })
-
-    // add action to history
-    var action = new App.Models.ActionWidget({input: input})
-    $('.history-widget').trigger('add_action', action)
+    if (input[0] === "$") {
+      // add code widget to code stack
+      var code_widget = new App.Models.CodeWidget({input: input})
+      $('.code_stack-widget').trigger('add_code_widget', code_widget)
+    }
+    else {
+      // add action to history
+      var action = new App.Models.ActionWidget({input: input})
+      $('.history-widget').trigger('add_action', action)
+    }
 
     // post the input and handle response
     $.post(
       'input',
       {input: input},
       function(output){
-        a = action.set('output', output)
+        if (input[0] === "$") {
+          o = JSON.parse(output)
+          c = code_widget.set('code', o.code)
+        } else {
+          a = action.set('output', output)
+        }
       }
     )
   }

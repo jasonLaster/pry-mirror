@@ -1,11 +1,10 @@
 
-App.launch_editor = function(el){
-    var editor = ace.edit(el.el.id);
+App.launch_editor = function(code){
+    var editor = ace.edit(code.el.id);
 
     // add text
-    var text = el.model.has('code') ? el.model.get('code') : ""
+    var text = code.model.has('code') ? code.model.get('code') : ""
     editor.insert(text);
-
 
     // Session settings
     var session = editor.getSession()
@@ -18,7 +17,12 @@ App.launch_editor = function(el){
 
     // Theme
     editor.setTheme("ace/theme/solarized_dark");
-    var style = el.el.style
+    var style = code.el.style
     style.fontSize='16px';
     style.fontWeight = 800;
+}
+
+App.update_text = function(el, code) {
+    var editor = ace.edit(el.id);
+    editor.setValue(code)
 }

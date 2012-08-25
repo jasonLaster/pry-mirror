@@ -4,17 +4,24 @@ App.Views.CodeStackWidget = Backbone.View.extend({
 
   initialize: function(){
     this.model = new App.Models.CodeStackWidget();
-    this.collection = new App.Collections.CodeStack(App.dummy_code_stack)
+
+    this.collection = new App.Collections.CodeStack()
+    this.collection.on("add", this.render_code_widget, this)
     return this;
   },
 
-  render_code_stack: function(){
-    var that = this
-    _.each(this.collection.models, function(code_widget){
-      code_widget_view = new App.Views.CodeWidget({model: code_widget})
-      that.$el.append(code_widget_view.$el)
-      App.launch_editor(code_widget_view)
-    })
+  events : {
+    'add_code_widget': 'add_code_widget'
+  },
+
+  add_code_widget: function(event, code) {
+    this.render_code_widget(code)
+  },
+
+  render_code_widget: function(code){
+    var code_widget_view = new App.Views.CodeWidgetView({model: code})
+    this.$el.append(code_widget_view.$el)
+    App.launch_editor(code_widget_view)
   }
 
 });
