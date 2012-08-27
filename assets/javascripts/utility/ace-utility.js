@@ -14,9 +14,11 @@ App.Ace.set_settings = function(editor) {
     // Session settings
     var session = editor.getSession()
     session.setMode(new (require("ace/mode/ruby").Mode));
-    session.setUseSoftTabs(false)
+    session.setUseSoftTabs(true)
+    session.setUndoSelect()
 
     // Editor Settings
+    editor.renderer
     editor.renderer.setShowGutter(false)
     editor.setHighlightActiveLine(false)
     editor.setTheme("ace/theme/solarized_dark");
@@ -31,7 +33,7 @@ App.Ace.set_styles = function(el){
 }
 
 App.Ace.show_gutter = function(editor) {
-    editor.renderer.setShowGutter(true)
+    editor.renderer.setShowGutter(false)
 }
 
 

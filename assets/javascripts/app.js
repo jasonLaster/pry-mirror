@@ -79,12 +79,14 @@ $('.input-widget textarea').keypress(function(e){
             break;
           case 'whereami':
             // create new code widget
-            var code_widget = new App.Models.CodeWidget({input: input, current: true})
-            $('.code_stack-widget').trigger('add_code_widget', code_widget)
-
-            // update code with new data
-            c = code_widget.set('code', o.code)
-            if(o.file_name != undefined) cf = code_widget.set('file-name', o.file)
+            $current = $('#current')
+            if($current.length == 0) {
+              var code_widget = new App.Models.CodeWidget({input: input, current: true})
+              $('.code_stack-widget').trigger('add_code_widget', code_widget)
+              cf = code_widget.set(o)
+            } else {
+              $current.trigger('update_current_code', o)
+            }
 
             console.log('whereami')
             break

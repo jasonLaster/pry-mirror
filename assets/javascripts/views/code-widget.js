@@ -9,9 +9,14 @@ App.Views.CodeWidgetView = Backbone.View.extend({
     return this;
   },
 
+  events : {
+    'update_current_code': 'update_current_code'
+  },
+
+
   render: function(){
     this.$el.html(this.template({view: this, model: this.model}))
-    if(this.model.get('current')) this.$el.addClass('current')
+    if(this.model.get('current')) this.$el.attr('id', 'current')
     return this
   },
 
@@ -24,11 +29,14 @@ App.Views.CodeWidgetView = Backbone.View.extend({
   update_code : function(){
     var editor = App.Ace.get_editor(this.code_id())
     var code = this.model.has('code') ? this.model.get('code') : ''
+    App.Ace.set_settings(editor)
     App.Ace.set_code(editor, code)
+  },
 
-    if (this.model.get('current')) {
-      App.Ace.show_gutter(editor)
-    }
+  update_current_code: function(e, data){
+    this.model.set(data)
+    this.render()
+    this.update_code()
   },
 
   code_id: function(){

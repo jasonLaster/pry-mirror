@@ -7,6 +7,12 @@
   <% if @model.has('num_lines'): %>
     <b>Lines: </b> <span> <%= @model.get('num_lines') %> </span>
   <% end %>
+
+  <% if @model.has('current_line'): %>
+    <b>Current Line: </b> <span> <%= @model.get('current_line') %> </span>
+  <% end %>
+
+
 </div>
 
 <div id="<%= @view.code_id() %>" class="code_el"></div>
