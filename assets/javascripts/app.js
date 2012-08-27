@@ -59,6 +59,9 @@ $('.input-widget textarea').keypress(function(e){
         if (input[0] === "$") {
           o = JSON.parse(output)
           c = code_widget.set('code', o.code)
+          if(o.file_name != undefined) cf = code_widget.set('file-name', o.file_name)
+          if(o.num_lines != undefined) cl = code_widget.set('num_lines', o.num_lines)
+
         } else {
           a = action.set('output', output)
         }

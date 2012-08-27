@@ -4,7 +4,7 @@ require "pry-bot"
 require 'drb'
 require 'pry'
 
-
+set :port, 9494
 
 $shared_io = DRbObject.new nil, 'druby://:9000'
 

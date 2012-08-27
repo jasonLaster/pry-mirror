@@ -1,4 +1,12 @@
 <div class="info">
+  <% if @model.has('file-name'): %>
+    <b>File: </b> <span> <%= @model.get('file-name') %> </span>
+    <br />
+  <% end %>
+
+  <% if @model.has('num_lines'): %>
+    <b>Lines: </b> <span> <%= @model.get('num_lines') %> </span>
+  <% end %>
 </div>
-<div id="<%= @code_id %>" class="code_el">
-</div>
+
+<div id="<%= @view.code_id() %>" class="code_el"></div>

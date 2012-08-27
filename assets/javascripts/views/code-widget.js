@@ -4,13 +4,20 @@ App.Views.CodeWidgetView = Backbone.View.extend({
 
   initialize: function(){
     this.el.id = this.model.cid;
+    this.model.on('change:num_lines', this.render_info, this)
     this.model.on('change:code', this.update_code, this)
     return this;
   },
 
   render: function(){
-    this.$el.html(this.template({code_id : this.code_id()}))
+    this.$el.html(this.template({view: this, model: this.model}))
     return this
+  },
+
+  render_info: function(){
+    var html = this.template({view: this, model: this.model})
+    var $info = $($(html)[0])
+    this.$el.find('.info').html($info)
   },
 
   update_code : function(){

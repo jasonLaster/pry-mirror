@@ -6,6 +6,7 @@ App.Ace.get_editor = function(id){
 
 App.Ace.set_code = function(editor, code) {
     editor.setValue(code)
+    editor.getSession().insert('')
     return editor
 }
 
