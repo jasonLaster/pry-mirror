@@ -67,6 +67,7 @@ li.box {
           margin-top:5px;
           height:150px;
           position:relative;
+          &.current {height:400px;}
 
           .info {
             font-family:helvetica;
@@ -126,5 +127,13 @@ li.box {
   }
 
 
+}
+
+.ace_editor {
+  &.ace-solarized-dark {
+    .ace_gutter-cell {
+      color:@base0;
+    }
+  }
 }
 

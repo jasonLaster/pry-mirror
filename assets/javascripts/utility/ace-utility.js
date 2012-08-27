@@ -30,9 +30,15 @@ App.Ace.set_styles = function(el){
     return style;
 }
 
+App.Ace.show_gutter = function(editor) {
+    editor.renderer.setShowGutter(true)
+}
+
+
 App.Ace.launch_editor = function(id) {
     var editor = App.Ace.get_editor(id)
     App.Ace.set_settings(editor)
     var el = $('#'+id)[0];
     App.Ace.set_styles(el)
 }
+
